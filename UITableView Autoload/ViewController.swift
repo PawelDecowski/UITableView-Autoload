@@ -67,6 +67,10 @@ class ViewController: UITableViewController {
         })
     }
     
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Loading…"
+    }
+    
     func loadMoreData(completion: @escaping () -> Void) {
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
             self.addData()
